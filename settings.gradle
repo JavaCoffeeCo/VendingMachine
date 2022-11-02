@@ -8,4 +8,3 @@
  */
 
 rootProject.name = 'JavaCoffee'
-include('app')
