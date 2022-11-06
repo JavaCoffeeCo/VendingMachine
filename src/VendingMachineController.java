@@ -147,6 +147,7 @@ public class VendingMachineController {
 				case 4: // exit
 				{
 					System.out.println("Exiting");
+					break;
 				}
 				
 			} // end of switch
