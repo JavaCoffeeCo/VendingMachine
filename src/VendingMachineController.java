@@ -12,35 +12,35 @@ public class VendingMachineController {
 	private CustomizeController customController;
 	private MemberDBM memberDataBase;
 	
-	// Constructor
+	// Default Constructor
 	public VendingMachineController() {}
 	
-	public void setMemberDatabase(MemberDBM m)
-	{
-		memberDataBase = m;
-	}
-	
+	// set member database
 	public void setMemberDatabase(File data)
 	{
-		// will load data file into database
+		memberDataBase = new MemberDBM(data);
 	}
 	
+	// get member database
 	public MemberDBM getMemberDatabase()
 	{
 		return memberDataBase;
 		
 	}
 	
+	// set customize controler
 	public void setCustomController(Member m)
 	{
 		customController = new CustomizeController(m);
 	}
 	
+	// get customize controller
 	public CustomizeController getCustomController()
 	{
 		return customController;
 	}
 	
+	// Prompt function displays home screen and redirects to other pages of Java Coffee Company Vending Machine screen.
 	public void prompt(Scanner scnr)
 	{
 		int homeChoice;
