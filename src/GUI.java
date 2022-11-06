@@ -1,5 +1,8 @@
-package rewardsSystem;
-
+package javacoffee;
+// EBA190002
+/*
+* GUI class displays a message concerning a users login status
+*/
 import javax.swing.*;
 
 
