@@ -1,4 +1,5 @@
-package rewardsSystem;
+package javacoffee;
+
 //Ezrela Amoako EBA190002
 /*
  * Member Database Manager holds a list of all the users who have membership accounts with
