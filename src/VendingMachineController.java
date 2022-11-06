@@ -107,6 +107,7 @@ public class VendingMachineController {
 								} // end of Save custom drink
 								case 2: // Show custom drink list
 								{
+									System.out.println(memberDataBase.get(usr) + "'s custom drinks:");
 									memberDataBase.get(usr).getRewards().displayDrinks();
 									break;
 								} // end of Show custom drink list
