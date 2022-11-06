@@ -53,6 +53,7 @@ public class VendingMachineController {
 			System.out.print("1. Log in as member\n2. Log in as staff\n3. Order drink\n4. Exit\n");
 			System.out.print("Select the action you would like performed: ");
 			homeChoice = scnr.nextInt();
+			System.out.println();
 			
 			switch(homeChoice)
 			{
