@@ -1,4 +1,5 @@
-package rewardsSystem;
+package javacoffee;
+
 //Ezrela Amoako EBA190002
 /*
  * Drink class holds the components for each drink
