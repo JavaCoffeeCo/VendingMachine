@@ -15,6 +15,7 @@ public class MemberDBM {
 	 public MemberDBM(){}
 	 
 	 // Constructor
+	 // Constructor reads database file, creates membership accounts, and puts them into memberlist
 	 public MemberDBM(File dBFile) throws FileNotFoundException
 	 {
 		 // check if file is readable
