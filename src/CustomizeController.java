@@ -1,5 +1,7 @@
-package rewardsSystem;
+package javacoffee;
+
 import java.util.*;
+
 //Ezrela Amoako EBA190002
 /*
  * Customize controller asks members for their customized drink ingredients, creates 
