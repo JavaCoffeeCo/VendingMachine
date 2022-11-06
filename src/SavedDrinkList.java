@@ -1,4 +1,4 @@
-package rewardsSystem;
+package javacoffee;
 
 //Ezrela Amoako EBA190002
 /*
