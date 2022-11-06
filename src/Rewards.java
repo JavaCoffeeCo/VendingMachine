@@ -1,4 +1,5 @@
-package rewardsSystem;
+package javacoffee;
+
 //Ezrela Amoako EBA190002
 /*
  * The Rewards class holds the saved drink list and promo codes
