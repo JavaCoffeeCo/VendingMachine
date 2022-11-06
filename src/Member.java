@@ -1,4 +1,5 @@
-package rewardsSystem;
+package javacoffee;
+
 //Ezrela Amoako EBA190002
 /*
  * Member class holds a members username, password, and rewards class
