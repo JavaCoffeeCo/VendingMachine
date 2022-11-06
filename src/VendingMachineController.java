@@ -63,6 +63,7 @@ public class VendingMachineController {
 					String usr = scnr.next();
 					System.out.print("Enter password: ");
 					String pswrd = scnr.next();
+					System.out.println();
 					
 					
 					
@@ -91,9 +92,10 @@ public class VendingMachineController {
 						do
 						{
 							// Print membership options
-							System.out.println("1. Save custom drink\n2. Show custom drink list\n3. Return to home screen");
+							System.out.println(memberDataBase.get(usr).getUser() + "'s rewards:\n1. Save custom drink\n2. Show custom drink list\n3. Return to home screen");
 							System.out.print("Select the action you would like performed: ");
 							memberChoice = scnr.nextInt();
+							System.out.println();
 						
 						
 							switch(memberChoice)
@@ -108,7 +110,7 @@ public class VendingMachineController {
 								} // end of Save custom drink
 								case 2: // Show custom drink list
 								{
-									System.out.println(memberDataBase.get(usr) + "'s custom drinks:");
+									System.out.println(memberDataBase.get(usr).getUser() + "'s custom drinks:");
 									memberDataBase.get(usr).getRewards().displayDrinks();
 									break;
 								} // end of Show custom drink list
