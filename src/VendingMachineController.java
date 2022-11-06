@@ -90,14 +90,14 @@ public class VendingMachineController {
 						do
 						{
 							// Print membership options
-							System.out.println("1. Save custom drink\n2. Show Custom Drink List\n3. Return to home screen");
+							System.out.println("1. Save custom drink\n2. Show custom drink list\n3. Return to home screen");
 							System.out.print("Select the action you would like performed: ");
 							memberChoice = scnr.nextInt();
 						
 						
 							switch(memberChoice)
 							{
-								case 1:
+								case 1: // Save custom drink
 								{
 									// run customize controller
 									scnr.nextLine();
@@ -105,11 +105,12 @@ public class VendingMachineController {
 									break;
 									
 								} // end of Save custom drink
-								case 2:
+								case 2: // Show custom drink list
 								{
+									memberDataBase.get(usr).getRewards().displayDrinks();
 									break;
-								} // end of Back to home screen
-								case 3:
+								} // end of Show custom drink list
+								case 3: // Back to home screen
 								{
 									break;
 								} // end of Back to home screen
