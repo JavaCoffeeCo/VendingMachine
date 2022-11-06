@@ -136,6 +136,8 @@ public class CustomizeController {
 		else
 			return;						// exit from saved drink page if user did not type y
 		
+		System.out.println();
+		
 		
 	} // end of function
 	
