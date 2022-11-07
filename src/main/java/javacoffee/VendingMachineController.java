@@ -8,8 +8,9 @@ package javacoffee;
 import java.util.*;
 import java.io.*;
 import javacoffee.order.CustomizeController;
+import javacoffee.members.Member;
 import javacoffee.members.MemberDBM;
-import javacoffe.gui.GUI;
+import javacoffee.gui.GUI;
 
 public class VendingMachineController {
 	private CustomizeController customController;

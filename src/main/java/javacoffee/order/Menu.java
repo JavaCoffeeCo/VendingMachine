@@ -11,7 +11,7 @@ public class Menu {
     // Temporary, initializes the menu with some example drinks and drink components
     static {
         // Add default drinks
-        Menu.registerDrink(new Drink("Water", "None", new String[]{"Ice"});
+        Menu.registerDrink(new Drink("Water", "None", new String[]{"Ice"}));
 
         // Add drink types
         Menu.registerDrinkType("Water");

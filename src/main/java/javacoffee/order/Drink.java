@@ -34,7 +34,7 @@ public class Drink {
 		return flavor;
 	}
 	
-	public String [] getaAddOns()
+	public String [] getAddOns()
 	{
 		return addOns;
 	}

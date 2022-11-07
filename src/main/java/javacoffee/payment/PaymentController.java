@@ -8,8 +8,8 @@ public class PaymentController{
   public PaymentController(){}
 
   public boolean payWithCash(Cash insertedAmount, float amountDue){
-    if(insertedAmount.totalAmount >= amountDue){
-      System.out.print("Balance: " + (insertedAmount.totalAmount - amountDue));
+    if(insertedAmount.totalAmount() >= amountDue){
+      System.out.print("Balance: " + (insertedAmount.totalAmount() - amountDue));
       return true;
     }
     return false;
@@ -50,9 +50,9 @@ public class PaymentController{
       System.out.print("Enter Security Code: ");
       int sc = scan.nextInt();
       System.out.print("Enter Name: ");
-      int n = scan.nextLine();
+      String n = scan.nextLine();
       System.out.print("Enter Expiration Date: ");
-      int ed = scan.nextLine();
+      String ed = scan.nextLine();
       CreditCard insertedCard = new CreditCard(ccn, sc, n, ed);
       if(payWithCredit(insertedCard, amountDue) == true){
         System.out.print("Transaction Successful\n");

@@ -1,16 +1,18 @@
 package javacoffee.order;
 
+import javacoffee.members.Member;
+
 /*
  * OrderManager allows orders to be submitted and carries them out.
  */
 public class OrderManager {
     private OrderQueue orderQueue;
-    private Member currentMember
+    private Member currentMember;
 
     // Submit a drink to the order queue
     public void orderDrink(Drink d) {
-        if(this.validateDrink) {
-            this.orderQueue.addOrder(Drink d);
+        if(this.validateDrink(d)) {
+            this.orderQueue.addOrder(d);
         }
     }
 
@@ -51,6 +53,6 @@ public class OrderManager {
 
     // Get the currently logged in member
     public Member getMember() {
-        return this.currentMember();
+        return this.currentMember;
     }
 }

@@ -7,7 +7,7 @@ public class PromoCodeController {
     PromoCodeList pCodeList;
 
     // Controller Constructor
-    public PromoCodeController() {pCodeList = new PromoCodeList()}
+    public PromoCodeController() {pCodeList = new PromoCodeList(); }
 
     // PromoCode Getters
     public String getPromoName(PromoCode pCode) { return pCode.getName(); }
@@ -54,7 +54,8 @@ public class PromoCodeController {
         String answ;
 
         // Display promo code you are editing
-        System.out.println("Old Promo Code:" + '\n' + pCode.printPromo());
+        System.out.println("Old Promo Code:");
+        pCode.printPromo();
 
         // Instructions
         System.out.println("If you want to keep something the same, than answer with blank.");

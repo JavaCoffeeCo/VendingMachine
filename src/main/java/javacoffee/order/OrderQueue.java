@@ -6,7 +6,7 @@ import java.util.LinkedList;
  * OrderQueue keeps track of the orders to be made.
  */
 public class OrderQueue {
-    private LinkedList drinkQueue;
+    private LinkedList<Drink> drinkQueue;
 
     // Constructor
     public OrderQueue() {
@@ -20,7 +20,7 @@ public class OrderQueue {
 
     // Remove a drink from the order queue
     public boolean removeOrder(Drink drink) {
-        this.drinkQueue.remove(drink);
+        return this.drinkQueue.remove(drink);
     }
 
     // Get the next order in the queue

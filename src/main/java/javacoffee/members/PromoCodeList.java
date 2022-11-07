@@ -27,6 +27,15 @@ public class PromoCodeList {
         }
     }
 
+    // Remove promo code from list
+    public PromoCode remove(PromoCode pCode) {
+        if(promoList.remove(pCode)) {;
+            return pCode;
+        } else {
+            return null;
+        }
+    }
+
     // Get promo code from list
     public PromoCode get(int i) {
         if (i > 0 && i <= promoList.size()) {
