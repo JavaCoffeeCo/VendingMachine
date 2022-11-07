@@ -1,5 +1,8 @@
 package javacoffee;
-
+//Alex Thomas ABT190000
+/*
+ * CreditCard class creates CreditCard object
+ */
 public class CreditCard{
   private String creditCardNumber;
   private int securityCode;

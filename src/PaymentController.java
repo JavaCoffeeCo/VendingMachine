@@ -1,6 +1,9 @@
 package javacoffee;
 import java.util.*;
-
+//Alex Thomas ABT190000
+/*
+ * Payment Controller handles all payment functionality
+ */
 public class PaymentController{
   public PaymentController(){}
 
@@ -23,8 +26,10 @@ public class PaymentController{
   }
 
   public void prompt(Scanner scan, float amountDue){
+    //prompt user for payment method
     System.out.print("1. Cash\n2. Credit Card\n3.Comet Card");
     int option = scan.nextInt();
+    //if option chosen is cash then prompt details, create cash object, call paywithcash method
     if(option == 1){
       System.out.print("Enter Bill Amount: ");
       int billAmount = scan.nextInt();
@@ -37,9 +42,8 @@ public class PaymentController{
       else{
         System.out.print("Transaction Failed\n");
       }
-
-      
     }
+    //if option chosen is credit then prompt details, create creditcard object, call paywithcredit method
     else if(option == 2){
       System.out.print("Enter Credit Card #: ");
       String ccn = scan.nextLine();
@@ -57,6 +61,7 @@ public class PaymentController{
         System.out.print("Transaction Failed\n");
       }
     }
+    //if option chosen is cometcard then prompt details, create cometcard object, call paywithcomet method
     else if(option == 3){
       System.out.print("Enter Student Name: ");
       String n = scan.nextLine();
@@ -70,6 +75,7 @@ public class PaymentController{
         System.out.print("Transaction Failed\n");
       }
     }
+    //if option chosen is out of bounds print invalid option
     else{
       System.out.print("Invalid Option\n");
     }

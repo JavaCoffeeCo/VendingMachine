@@ -1,5 +1,8 @@
 package javacoffee;
-
+//Alex Thomas ABT190000
+/*
+ * CometCard class creates CometCard object
+ */
 public class CometCard{
   private String studentName;
   private int studentID;

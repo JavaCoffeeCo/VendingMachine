@@ -1,3 +1,8 @@
+package javacoffee;
+//Alex Thomas ABT190000
+/*
+ * Cash class creates Cash object
+ */
 class Cash{
   private int cashAmount;
   private float coinAmount;
