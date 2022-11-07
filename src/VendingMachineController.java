@@ -77,7 +77,7 @@ public class VendingMachineController {
 						gui.runGUI("Invalid password");
 					} // end of invalid password
 				
-					if(!usr.equals(" "))
+					else
 					{
 						// Print member screen
 						
