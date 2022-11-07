@@ -70,18 +70,18 @@ public class VendingMachineController {
 					int ind = memberDataBase.searchUsr(usr);
 					if(ind == -1)
 					{
-						gui.runGUI("Invalid username");
+						gui.runGUI("Login Failed. Invalid username");
 					} // end of invalid username
 					else if(!(memberDataBase.confirmPassword(ind, pswrd)))
 					{
-						gui.runGUI("Invalid password");
+						gui.runGUI("Login Failed. Invalid password");
 					} // end of invalid password
 				
 					else
 					{
 						// Print member screen
 						
-						gui.runGUI("\nWelcome, " + memberDataBase.get(usr).getUser());
+						gui.runGUI("Login Successful. Welcome, " + memberDataBase.get(usr).getUser());
 						
 						// Set customize controller
 						setCustomController(memberDataBase.get(usr));
