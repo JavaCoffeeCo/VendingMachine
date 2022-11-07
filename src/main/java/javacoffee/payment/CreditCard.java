@@ -1,4 +1,4 @@
-package javacoffee;
+package javacoffee.payment;
 
 public class CreditCard{
     private String creditCardNumber;

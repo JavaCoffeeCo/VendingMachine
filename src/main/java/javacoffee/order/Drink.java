@@ -1,4 +1,4 @@
-package javacoffee;
+package javacoffee.order;
 
 //Ezrela Amoako EBA190002
 /*

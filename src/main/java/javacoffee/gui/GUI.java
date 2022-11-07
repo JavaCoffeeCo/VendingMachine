@@ -1,4 +1,4 @@
-package javacoffee;
+package javacoffee.gui;
 // EBA190002
 /*
 * GUI class displays a message concerning a users login status

@@ -1,4 +1,7 @@
-package javacoffee;
+package javacoffee.members;
+
+import javacoffee.order.Drink;
+
 //Ezrela Amoako EBA190002
 /* Saved Drink Class
  * Saved drinks will be constructed here. 

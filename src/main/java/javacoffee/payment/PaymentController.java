@@ -1,4 +1,4 @@
-package javacoffee;
+package javacoffee.payment;
 
 public class PaymentController{
     public PaymentController(){}

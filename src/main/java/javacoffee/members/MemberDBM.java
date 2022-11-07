@@ -1,4 +1,4 @@
-package javacoffee;
+package javacoffee.members;
 
 //Ezrela Amoako EBA190002
 /*

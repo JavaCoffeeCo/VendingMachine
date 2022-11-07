@@ -1,3 +1,5 @@
+package javacoffee.payment;
+
 class Cash{
     private int cashAmount;
     private float coinAmount;

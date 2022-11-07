@@ -1,4 +1,4 @@
-package javacoffee;
+package javacoffee.members;
 
 public class PromoCode {
     String name;    // Promotion Title
