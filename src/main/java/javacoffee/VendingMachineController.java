@@ -7,7 +7,7 @@ package javacoffee;
  */
 import java.util.*;
 import java.io.*;
-import javacoffee.order.CustomizeController;
+import javacoffee.members.CustomizeController;
 import javacoffee.members.Member;
 import javacoffee.members.MemberDBM;
 import javacoffee.gui.GUI;

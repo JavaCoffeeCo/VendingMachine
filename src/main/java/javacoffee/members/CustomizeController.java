@@ -1,8 +1,6 @@
-package javacoffee.order;
+package javacoffee.members;
 
 import java.util.*;
-import javacoffee.members.Member;
-import javacoffee.members.SavedDrink;
 
 //Ezrela Amoako EBA190002
 /*
