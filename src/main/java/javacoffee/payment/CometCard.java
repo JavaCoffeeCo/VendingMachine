@@ -6,10 +6,12 @@ package javacoffee.payment;
 public class CometCard{
   private String studentName;
   private int studentID;
+  private float currentAmount;
 
   public CometCard(String studentName, int studentID){
     this.studentName = studentName;
     this.studentID = studentID;
+    this.currentAmount = 100;
   }
 
   public String getStudentName(){
@@ -18,5 +20,13 @@ public class CometCard{
 
   public int getStudentID(){
     return studentID;
+  }
+
+  public boolean chargeCard(float amount){
+    if(currentAmount >= amount){
+      currentAmount -= amount;
+      return true;
+    }
+    return false;
   }
 }

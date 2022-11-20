@@ -8,12 +8,14 @@ public class CreditCard{
   private int securityCode;
   private String name;
   private String expirationDate;
+  private float totalCredit;
 
   public CreditCard(String creditCardNumber, int securityCode, String name, String expirationDate){
     this.creditCardNumber = creditCardNumber;
     this.securityCode = securityCode;
     this.name = name;
     this.expirationDate = expirationDate;
+    this.totalCredit = 1500;
   }
 
   public String getCreditCardNumber(){
@@ -31,4 +33,15 @@ public class CreditCard{
   public String getExpirationDate(){
     return expirationDate;
   }
+
+  public boolean chargeCard(float chargedAmount){
+    if(totalCredit >= chargedAmount){
+      totalCredit -= chargedAmount;
+      return true;
+    }
+    return false;
+  }
+
+
+  
 }

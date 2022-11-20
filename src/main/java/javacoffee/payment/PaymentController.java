@@ -7,6 +7,16 @@ import java.util.*;
 public class PaymentController{
   public PaymentController(){}
 
+  public boolean validateCard(String creditCardNumber){
+    try{
+      int ccn = Integer.parseInt(creditCardNumber);
+      return true;
+    }
+    catch(NumberFormatException e){
+      return false;
+    }
+  }
+
   public boolean payWithCash(Cash insertedAmount, float amountDue){
     if(insertedAmount.totalAmount() >= amountDue){
       System.out.print("Balance: " + (insertedAmount.totalAmount() - amountDue));
@@ -17,12 +27,12 @@ public class PaymentController{
 
   public boolean payWithCredit(CreditCard cc, float amountDue){
     //need to implement
-    return false; 
+    return cc.chargeCard(amountDue); 
   }
 
-  public boolean payWithCometCard(CometCard cc, float insertedAmount){
+  public boolean payWithCometCard(CometCard cc, float amountDue){
     //need to implement
-    return false;
+    return cc.chargeCard(amountDue);
   }
 
   public void prompt(Scanner scan, float amountDue){
@@ -53,12 +63,17 @@ public class PaymentController{
       String n = scan.nextLine();
       System.out.print("Enter Expiration Date: ");
       String ed = scan.nextLine();
-      CreditCard insertedCard = new CreditCard(ccn, sc, n, ed);
-      if(payWithCredit(insertedCard, amountDue) == true){
-        System.out.print("Transaction Successful\n");
+      if(validateCard(ccn)){
+        CreditCard insertedCard = new CreditCard(ccn, sc, n, ed);
+        if(payWithCredit(insertedCard, amountDue) == true){
+          System.out.print("Transaction Successful\n");
+        }
+        else{
+          System.out.print("Transaction Failed\n");
+        }
       }
       else{
-        System.out.print("Transaction Failed\n");
+        System.out.println("Invalid Credit Card Number");
       }
     }
     //if option chosen is cometcard then prompt details, create cometcard object, call paywithcomet method
