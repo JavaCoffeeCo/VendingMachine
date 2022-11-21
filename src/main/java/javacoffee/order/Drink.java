@@ -53,8 +53,12 @@ public class Drink {
 	{
 		addOns = a;
 	}
-	
-	
-	
 
+    public String toString() {
+        String d = type + ", " + flavor;
+        for(String ao : addOns) {
+            d = d + ", " + ao;
+        }
+        return d;
+    }
 }

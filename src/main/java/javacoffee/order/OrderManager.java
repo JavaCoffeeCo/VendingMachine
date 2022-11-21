@@ -1,6 +1,8 @@
 package javacoffee.order;
 
+import java.util.Scanner;
 import javacoffee.members.Member;
+import javacoffee.members.SavedDrinkList;
 
 /*
  * OrderManager allows orders to be submitted and carries them out.
@@ -8,6 +10,29 @@ import javacoffee.members.Member;
 public class OrderManager {
     private OrderQueue orderQueue;
     private Member currentMember;
+
+    public void menuPrompt(Scanner scnr) {
+        System.out.println("Choose one drink from the list below:");
+        for(int i = 0; i < Menu.defaultDrinks.size(); ++i) {
+            String name = Menu.defaultDrinks.get(i).toString();
+            System.out.println((i+1) + " - " + name);
+        }
+        int choice = scnr.nextInt() - 1;
+        if(choice >= 0 && choice < Menu.defaultDrinks.size()) {
+            this.orderDrink(Menu.defaultDrinks.get(choice));
+        }
+        System.out.println("Ordered " + orderQueue.getNextOrder());
+        this.makeNextDrink();
+    }
+
+    public void savedDrinkPrompt(Scanner scnr) {
+        System.out.println("Choose one drink from the list below:");
+        currentMember.getRewards().displayDrinks();
+        int choice = scnr.nextInt() - 1;
+        this.orderDrink(currentMember.getRewards().getDrink(choice));
+        System.out.println("Ordered " + orderQueue.getNextOrder());
+        this.makeNextDrink();
+    }
 
     // Submit a drink to the order queue
     public void orderDrink(Drink d) {

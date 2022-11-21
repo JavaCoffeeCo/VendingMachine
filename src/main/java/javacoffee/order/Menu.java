@@ -1,12 +1,13 @@
 package javacoffee.order;
 
 import java.util.HashSet;
+import java.util.LinkedList;
 
 public class Menu {
-    public static HashSet<Drink> defaultDrinks;
-    public static HashSet<String> drinkTypes;
-    public static HashSet<String> flavors;
-    public static HashSet<String> addOns;
+    public static LinkedList<Drink> defaultDrinks = new LinkedList<Drink>();
+    public static HashSet<String> drinkTypes = new HashSet<String>();
+    public static HashSet<String> flavors = new HashSet<String>();
+    public static HashSet<String> addOns = new HashSet<String>();
 
     // Temporary, initializes the menu with some example drinks and drink components
     static {

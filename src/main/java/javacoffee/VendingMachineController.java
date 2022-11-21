@@ -7,6 +7,7 @@ package javacoffee;
  */
 import java.util.*;
 import java.io.*;
+import javacoffee.order.OrderManager;
 import javacoffee.members.CustomizeController;
 import javacoffee.members.Member;
 import javacoffee.members.MemberDBM;
@@ -15,6 +16,7 @@ import javacoffee.gui.GUI;
 public class VendingMachineController {
 	private CustomizeController customController;
 	private MemberDBM memberDataBase;
+    private OrderManager orderManager;
 	private GUI gui = new GUI();
 	
 	// Constructor
@@ -48,7 +50,9 @@ public class VendingMachineController {
 	
 	public void prompt(Scanner scnr)
 	{
+        OrderManager orderManager = new OrderManager();
 		int homeChoice;
+        mainMenu:
 		do 
 		{
 			// Print home screen
@@ -86,6 +90,7 @@ public class VendingMachineController {
 						// Print member screen
 						
 						gui.runGUI("Login Successful. Welcome, " + memberDataBase.get(usr).getUser());
+                        orderManager.setMember(memberDataBase.get(usr));
 						
 						// Set customize controller
 						setCustomController(memberDataBase.get(usr));
@@ -145,8 +150,23 @@ public class VendingMachineController {
 				case 3: // Order drink
 				{
 					// check if user is a member
+                    if(orderManager.getMember() != null) {
 						// if member ask if member wants to: 1. order off menu 2. order from saved drinks
-						// else display menu for user to order
+                        System.out.print("1. Order Off of Menu\n2. Order from saved drinks\n3. Exit\n");
+                        switch(scnr.nextInt()) {
+                            case 1:
+                                orderManager.menuPrompt(scnr);
+                                break;
+                            case 2:
+                                orderManager.savedDrinkPrompt(scnr);
+                                break;
+                            case 3:
+                                continue mainMenu;
+                        }
+                    // else display menu for user to order
+                    } else {
+                        orderManager.menuPrompt(scnr);
+                    }
 					
 						// pay for order (call payment controller)
 					break;
