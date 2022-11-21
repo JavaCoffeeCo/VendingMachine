@@ -35,6 +35,14 @@ run {
     standardInput = System.in
 }
 
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'javacoffee.App'
+        )
+    }
+}
+
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()

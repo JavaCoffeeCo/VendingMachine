@@ -91,7 +91,7 @@ public class App {
        Scanner scnr = new Scanner(System.in);
        VendingMachineController v = new VendingMachineController();
        try {
-           File infile = new File("src/main/resources/data1.txt");
+           File infile = new File("data1.txt");
             
             if(infile.canRead())
             {
