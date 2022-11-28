@@ -32,6 +32,12 @@ public class Rewards {
 		return savedDrinks.get(ind);	
 	}
 	
+	// Get saved drink list
+	public SavedDrinkList getSavedDrinksList()
+	{
+		return savedDrinks;
+	}
+	
 	// Display drinks
 	public void displayDrinks()
 	{
