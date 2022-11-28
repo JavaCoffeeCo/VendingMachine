@@ -53,7 +53,9 @@ public class CustomizeController {
 	// Prompt function records users custom drink and saves the drink to their drink list
 	public void prompt(Scanner scnr)
 	{
-		String name, type, flavor;
+		String name; 
+		String [] typesArr = new String [] {"Black", "Mocha", "Latte"} , flavorsArr = new String [] { "Hazelnut", "Peppermint", "Vanilla"};
+		int type, flavor;
 		String [] addOns;
 		int choice, size;
 		
@@ -61,11 +63,11 @@ public class CustomizeController {
 		System.out.print("Enter custom drink name: ");
 		name = scnr.nextLine();
 		
-		System.out.print("Enter custom drink type: ");
-		type = scnr.nextLine();
+		System.out.print("Enter custom drink type (select corresponding number):\n1. Black\n2. Mocha\n3. Latte");
+		type = scnr.nextInt();
 		
-		System.out.print("Enter custom drink flavor: ");
-		flavor = scnr.nextLine();
+		System.out.print("Enter custom drink flavor(select corresponding number):\n1. Hazelnut\n2. Peppermint\n3. Vanilla ");
+		flavor = scnr.nextInt();
 		
 		// User must select 0 to 3 add ons
 		System.out.print("Enter how many add ons you would like (from 0 up to 3): ");
@@ -119,9 +121,10 @@ public class CustomizeController {
 		} // end of else
 		
 		// Create saved drink
-		SavedDrink s = customize(name, type, flavor, addOns);
+		SavedDrink s = customize(name, typesArr[type - 1], flavorsArr[flavor - 1] , addOns);
 		// Print drink details
 		s.printDrink();
+		System.out.println();
 		
 		// Ask user if they would like to confirm saving drink
 		System.out.print("Would you like to save your drink? Type y for yes and any other key for no: ");
@@ -131,7 +134,19 @@ public class CustomizeController {
 		
 		if(save.compareTo("y") == 0)	// save drink if user typed a y
 		{
-			saveCustom(s);
+			boolean b = false;
+			
+			for(int i = 1; i <= membership.getRewards().getSavedDrinksList().getSize(); i++)
+			{
+				if(s.equals(membership.getRewards().getDrink(i)))
+					b = true;
+					
+			}
+			
+			if(b)
+				System.out.println("You cannot save a duplicate drink.");
+			else
+				saveCustom(s);
 		}
 		else
 			return;						// exit from saved drink page if user did not type y
