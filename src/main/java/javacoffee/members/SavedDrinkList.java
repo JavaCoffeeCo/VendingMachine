@@ -79,4 +79,11 @@ public class SavedDrinkList {
 	 System.out.println("Your drink, " + drinksList.getLast().getName() + " has been saved!");
  } 
 
+ // get saved drinks list length
+ public int getSize()
+ {
+	//System.out.println("Size: " +  drinksList.size());
+	return drinksList.size();
+ }
+
 }
