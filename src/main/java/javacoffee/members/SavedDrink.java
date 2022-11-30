@@ -51,6 +51,52 @@ public class SavedDrink extends Drink{
 		
 	}
 	
+	// compare drinks. Return true if drinks are equal
+	public boolean equals(SavedDrink s)
+	{
+		boolean b = false;
+		
+		if(s.getName().equals(this.getName())) // check names
+		{
+			if(s.getType().equals(this.getType())) // check types
+			{
+				if((s.getFlavor()).equals(this.getFlavor())) // check flavors
+				{
+					if(s.getAddOns().length == this.getAddOns().length) // check length of addOn arrays
+					{
+						for(int i = 0; i < s.getAddOns().length; i++) // check add ons
+						{
+							if(!((s.getAddOns()[i]).equals(this.getAddOns()[i])))
+							{
+								b = true;
+							}
+						}
+						
+						if(b)
+						{
+							System.out.println("add ons don't match");
+							b = false; // add ons don't match, b is false
+						}
+							
+						else
+							b = true; // if add ons match, set b to true
+					}
+					/*else
+						System.out.println("add ons length");*/
+				}
+				/*else
+					System.out.println("flavor");*/
+			}
+			/*else
+				System.out.println("type");*/
+		}
+		/*else
+		System.out.println("Name");*/
+		
+		return b;
+		
+	}
+	
 	
 
 }
