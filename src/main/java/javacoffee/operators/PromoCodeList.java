@@ -50,7 +50,7 @@ public class PromoCodeList {
     // Display all promo codes
     public void display() {
         for (int i = 0; i < promoList.size(); i++) {
-            promoList.get(i).printPromo(i);
+            promoList.get(i).printPromo();
         }
     }
 

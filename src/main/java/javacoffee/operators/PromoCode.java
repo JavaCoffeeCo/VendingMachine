@@ -34,8 +34,8 @@ public class PromoCode {
     public void setCode(String c) { code = c; }
 
     // PromoCode Print
-    public void printPromo(Integer index) {
-        System.out.println(index + " " + name + ":");
+    public void printPromo() {
+        System.out.println(name + ":");
         System.out.println("Discount: " + discount + "%");
         System.out.println(code);
     }

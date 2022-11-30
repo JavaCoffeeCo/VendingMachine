@@ -55,7 +55,7 @@ public class PromoCodeController {
 
         // Display promo code you are editing
         System.out.println("Old Promo Code:");
-        pCode.printPromo(null);
+        pCode.printPromo();
 
         // Instructions
         System.out.println("If you want to keep something the same, than answer with blank.");
@@ -83,9 +83,11 @@ public class PromoCodeController {
     }
 
     public void prompt(Scanner scnr) {
-        int opChoice;
+        int opChoice;   // Operator choice
+        int pCodeName;  // Promo code name
 
         do {
+            // Give operator options
             System.out.println("1. Add Promo Code\n2. Delete Promo Code\n3. Edit Promo Code\n 4. Return to operator screen");
             System.out.println("Select the action you would like preformed: ");
             opChoice = scnr.nextInt();
@@ -94,16 +96,20 @@ public class PromoCodeController {
                     createPromoCode(scnr);
                     break;
                 case 2:
-                    pCodeList.display();
-                    int pChoice;
-                    System.out.println("");
+                    pCodeList.display();    // display all current promo codes
+                    System.out.println("Which promo code would you like to delete? (0, 1, 2, ...)");
+                    pCodeName = scnr.nextInt();
+                    deletePromoCode(pCodeList.get(pCodeName));  // delete selected promo code
                     break;
                 case 3:
+                    pCodeList.display();    // display all current promo codes
+                    System.out.println("Which promo code would you like to delete? (0, 1, 2, ...)");
+                    pCodeName = scnr.nextInt();
+                    editPromoCode(pCodeList.get(pCodeName), scnr);  // edit selected promo code
                     break;
                 case 4:
                     break;
             }
         } while(opChoice != 4);
-        return;
     }
 }
