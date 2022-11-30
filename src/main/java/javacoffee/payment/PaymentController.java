@@ -10,7 +10,13 @@ public class PaymentController{
   public boolean validateCard(String creditCardNumber){
     try{
       int ccn = Integer.parseInt(creditCardNumber);
-      return true;
+      if(creditCardNumber.length() == 16){
+        return true;
+      }
+      else{
+        return false;
+      }
+      
     }
     catch(NumberFormatException e){
       return false;
@@ -26,12 +32,10 @@ public class PaymentController{
   }
 
   public boolean payWithCredit(CreditCard cc, float amountDue){
-    //need to implement
     return cc.chargeCard(amountDue); 
   }
 
   public boolean payWithCometCard(CometCard cc, float amountDue){
-    //need to implement
     return cc.chargeCard(amountDue);
   }
 

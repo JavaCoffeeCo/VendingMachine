@@ -8,6 +8,7 @@ package javacoffee;
 import java.util.*;
 import java.io.*;
 import javacoffee.order.OrderManager;
+import javacoffee.payment.PaymentController;
 import javacoffee.members.CustomizeController;
 import javacoffee.members.Member;
 import javacoffee.members.MemberDBM;
@@ -17,6 +18,7 @@ public class VendingMachineController {
 	private CustomizeController customController;
 	private MemberDBM memberDataBase;
     private OrderManager orderManager;
+	private PaymentController paymentController = new PaymentController();
 	private GUI gui = new GUI();
 	
 	// Constructor
@@ -156,9 +158,11 @@ public class VendingMachineController {
                         switch(scnr.nextInt()) {
                             case 1:
                                 orderManager.menuPrompt(scnr);
+								paymentController.prompt(scnr, 5.00f);
                                 break;
                             case 2:
                                 orderManager.savedDrinkPrompt(scnr);
+								paymentController.prompt(scnr, 5.00f);
                                 break;
                             case 3:
                                 continue mainMenu;
@@ -166,6 +170,7 @@ public class VendingMachineController {
                     // else display menu for user to order
                     } else {
                         orderManager.menuPrompt(scnr);
+						paymentController.prompt(scnr, 5.00f);
                     }
 					
 						// pay for order (call payment controller)
