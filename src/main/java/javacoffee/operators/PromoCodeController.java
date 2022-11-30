@@ -1,13 +1,13 @@
-package javacoffee.members;
+package javacoffee.operators;
 
 import java.util.*;
 
 public class PromoCodeController {
     // Promo Code List
-    PromoCodeList pCodeList;
+    private PromoCodeList pCodeList;
 
     // Controller Constructor
-    public PromoCodeController() {pCodeList = new PromoCodeList(); }
+    public PromoCodeController() { pCodeList = new PromoCodeList(); }
 
     // PromoCode Getters
     public String getPromoName(PromoCode pCode) { return pCode.getName(); }
@@ -55,7 +55,7 @@ public class PromoCodeController {
 
         // Display promo code you are editing
         System.out.println("Old Promo Code:");
-        pCode.printPromo();
+        pCode.printPromo(null);
 
         // Instructions
         System.out.println("If you want to keep something the same, than answer with blank.");
@@ -80,5 +80,30 @@ public class PromoCodeController {
         if (!answ.equals("")) {
             pCode.setCode(answ);
         }
+    }
+
+    public void prompt(Scanner scnr) {
+        int opChoice;
+
+        do {
+            System.out.println("1. Add Promo Code\n2. Delete Promo Code\n3. Edit Promo Code\n 4. Return to operator screen");
+            System.out.println("Select the action you would like preformed: ");
+            opChoice = scnr.nextInt();
+            switch (opChoice) {
+                case 1:
+                    createPromoCode(scnr);
+                    break;
+                case 2:
+                    pCodeList.display();
+                    int pChoice;
+                    System.out.println("");
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
+        } while(opChoice != 4);
+        return;
     }
 }

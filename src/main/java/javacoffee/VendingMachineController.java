@@ -7,6 +7,9 @@ package javacoffee;
  */
 import java.util.*;
 import java.io.*;
+
+import javacoffee.operators.OperatorDBM;
+import javacoffee.operators.PromoCodeController;
 import javacoffee.order.OrderManager;
 import javacoffee.members.CustomizeController;
 import javacoffee.members.Member;
@@ -15,7 +18,9 @@ import javacoffee.gui.GUI;
 
 public class VendingMachineController {
 	private CustomizeController customController;
+	private PromoCodeController promoController;
 	private MemberDBM memberDataBase;
+	private OperatorDBM operatorDataBase;
     private OrderManager orderManager;
 	private GUI gui = new GUI();
 	
@@ -140,10 +145,39 @@ public class VendingMachineController {
 				
 				case 2: // Log in as staff
 				{
-					// check for valid ID from staffDatabase
-					// if valid
-						// ask if staff member wants to: 1. set promocodes (call set promocodes controller), 2. Return to home screen
-					// else send error message
+					System.out.print("Enter Operator ID: ");
+					String opID = scnr.next();
+					System.out.print("Enter Password: ");
+					String opassword = scnr.next();
+					System.out.println();
+
+					int ind = operatorDataBase.searchOperator(opID);
+					if(ind == -1) {
+						gui.runGUI("Login Failed. Invalid Operator ID");
+					} else if(!(operatorDataBase.confirmPassword(ind, opassword))) {
+						gui.runGUI("Login Failed. Invalid Password");
+					} else {
+						// Print operator screen
+						gui.runGUI("Login Successful. Welcome, " + operatorDataBase.get(opID).getOperatorID());
+
+						int opChoice;
+
+						do {
+							// Print operator options
+							System.out.println("1. Set PromoCodes\n2. Return to home screen");
+							System.out.print("Select the action you would like performed: ");
+							opChoice = scnr.nextInt();
+							System.out.println();
+
+							switch(opChoice) {
+								case 1:	// Run promo code controller
+									promoController.prompt(scnr);
+									break;
+								case 2:	// Go to main menu
+									break;
+							}
+						} while(opChoice != 2);
+					}	// end of operator verification
 					break;
 				} // end of Log in as staff
 				

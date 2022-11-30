@@ -1,4 +1,4 @@
-package javacoffee.members;
+package javacoffee.operators;
 
 import java.util.*;
 
@@ -50,7 +50,7 @@ public class PromoCodeList {
     // Display all promo codes
     public void display() {
         for (int i = 0; i < promoList.size(); i++) {
-            promoList.get(i).printPromo();
+            promoList.get(i).printPromo(i);
         }
     }
 
