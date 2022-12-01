@@ -56,7 +56,8 @@ public class OrderManager {
     public void makeNextDrink() {
         Drink d = this.orderQueue.getNextOrder();
         /* Making the drink */
-        System.out.println("Please pick up your drink below!\n");
+        //System.out.println("Please pick up your drink below!\n");
+        System.out.println("\n");
         this.orderQueue.removeOrder(d);
     }
 
