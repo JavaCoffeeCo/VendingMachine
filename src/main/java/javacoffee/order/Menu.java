@@ -26,6 +26,7 @@ public class Menu {
         Menu.registerFlavor("None");
         Menu.registerFlavor("Hazelnut");
         Menu.registerFlavor("Peppermint");
+        Menu.registerFlavor("Vanilla");
 
         // Add Add-Ons
         Menu.registerAddOn("Ice");
