@@ -67,6 +67,7 @@ public class PaymentController{
         CreditCard insertedCard = new CreditCard(ccn, sc, n, ed);
         if(payWithCredit(insertedCard, amountDue) == true){
           System.out.print("Transaction Successful\n");
+          System.out.println("Please pick up your drink below!\n");
         }
         else{
           System.out.print("Transaction Failed\n");
