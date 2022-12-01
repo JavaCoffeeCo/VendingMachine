@@ -194,6 +194,7 @@ public class VendingMachineController {
                             case 1:
 				gui.orderDrinkGUI();
                                 orderManager.menuPrompt(scnr);
+				System.out.println("Drink price is: $5.00\nSelect payment type:");
 								paymentController.prompt(scnr, 5.00f);
 				System.out.println();
                                 break;
@@ -210,6 +211,7 @@ public class VendingMachineController {
                     } else {
 			 gui.orderDrinkGUI();
                         orderManager.menuPrompt(scnr);
+			    System.out.println("Drink price is: $5.00\nSelect payment type:");
 						paymentController.prompt(scnr, 5.00f);
                     }
 					
