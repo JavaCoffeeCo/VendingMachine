@@ -195,11 +195,13 @@ public class VendingMachineController {
 				gui.orderDrinkGUI();
                                 orderManager.menuPrompt(scnr);
 								paymentController.prompt(scnr, 5.00f);
+				System.out.println();
                                 break;
                             case 2:
 				gui.orderSavedDrinkGUI();
                                 orderManager.savedDrinkPrompt(scnr);
 								paymentController.prompt(scnr, 5.00f);
+				System.out.println();
                                 break;
                             case 3:
                                 continue mainMenu;
