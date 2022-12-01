@@ -128,6 +128,7 @@ public class VendingMachineController {
 								{
 									System.out.println(memberDataBase.get(usr).getUser() + "'s custom drinks:");
 									memberDataBase.get(usr).getRewards().displayDrinks();
+									System.out.println();
 									break;
 								} // end of Show custom drink list
 								case 3: // Back to home screen
