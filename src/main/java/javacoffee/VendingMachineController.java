@@ -191,10 +191,12 @@ public class VendingMachineController {
                         System.out.print("1. Order Off of Menu\n2. Order from saved drinks\n3. Exit\n");
                         switch(scnr.nextInt()) {
                             case 1:
+				gui.orderDrinkGUI();
                                 orderManager.menuPrompt(scnr);
 								paymentController.prompt(scnr, 5.00f);
                                 break;
                             case 2:
+				gui.orderSavedDrinkGUI();
                                 orderManager.savedDrinkPrompt(scnr);
 								paymentController.prompt(scnr, 5.00f);
                                 break;

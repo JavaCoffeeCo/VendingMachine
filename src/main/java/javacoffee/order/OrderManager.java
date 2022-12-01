@@ -28,7 +28,7 @@ public class OrderManager {
     public void savedDrinkPrompt(Scanner scnr) {
         System.out.println("Choose one drink from the list below:");
         currentMember.getRewards().displayDrinks();
-        int choice = scnr.nextInt() - 1;
+        int choice = scnr.nextInt();
         this.orderDrink(currentMember.getRewards().getDrink(choice));
         System.out.println("Ordered " + orderQueue.getNextOrder());
         this.makeNextDrink();
@@ -56,7 +56,7 @@ public class OrderManager {
     public void makeNextDrink() {
         Drink d = this.orderQueue.getNextOrder();
         /* Making the drink */
-        System.out.println("Please pick up your drink below!");
+        System.out.println("Please pick up your drink below!\n");
         this.orderQueue.removeOrder(d);
     }
 

@@ -63,10 +63,10 @@ public class CustomizeController {
 		System.out.print("Enter custom drink name: ");
 		name = scnr.nextLine();
 		
-		System.out.print("Enter custom drink type (select corresponding number):\n1. Black\n2. Mocha\n3. Latte");
+		System.out.println("Enter custom drink type (select corresponding number):\n1. Black\n2. Mocha\n3. Latte");
 		type = scnr.nextInt();
 		
-		System.out.print("Enter custom drink flavor(select corresponding number):\n1. Hazelnut\n2. Peppermint\n3. Vanilla ");
+		System.out.println("Enter custom drink flavor(select corresponding number):\n1. Hazelnut\n2. Peppermint\n3. Vanilla ");
 		flavor = scnr.nextInt();
 		
 		// User must select 0 to 3 add ons
