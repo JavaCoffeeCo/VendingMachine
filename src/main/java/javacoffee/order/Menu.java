@@ -29,7 +29,7 @@ public class Menu {
         Menu.registerAddOn("None");
         Menu.registerAddOn("Ice");
         Menu.registerAddOn("Cream");
-        Menu.registerAddOn("Suger");
+        Menu.registerAddOn("Sugar");
         Menu.registerAddOn("Syrup");
     }
 
