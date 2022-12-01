@@ -12,7 +12,9 @@ public class Menu {
     // Temporary, initializes the menu with some example drinks and drink components
     static {
         // Add default drinks
-        Menu.registerDrink(new Drink("Water", "None", new String[]{"Ice"}));
+        Menu.registerDrink(new Drink("Mocha", "Peppermint", new String[]{"Syrup"}));
+        Menu.registerDrink(new Drink("Latte", "Hazelnut", new String[]{"Cream"}));
+        Menu.registerDrink(new Drink("Black", "Vanilla", new String[]{}));
 
         // Add drink types
         Menu.registerDrinkType("Water");
@@ -26,7 +28,6 @@ public class Menu {
         Menu.registerFlavor("Peppermint");
 
         // Add Add-Ons
-        Menu.registerAddOn("None");
         Menu.registerAddOn("Ice");
         Menu.registerAddOn("Cream");
         Menu.registerAddOn("Suger");
