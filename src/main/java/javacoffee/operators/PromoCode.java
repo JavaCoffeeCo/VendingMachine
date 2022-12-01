@@ -5,13 +5,6 @@ public class PromoCode {
     int discount;    // % Discount Applied
     String code;   // Promotional Code needed by the user
 
-    // Default Promo Code Constructor
-    public PromoCode() {
-        name = "Test Promo Code";
-        discount = 5;  // Discount should be 10%
-        code = "TEST";
-    }
-
     // Custom Promo Code Constructor
     public PromoCode(String n, int d, String c) {
         name = n;
@@ -35,6 +28,7 @@ public class PromoCode {
 
     // PromoCode Print
     public void printPromo() {
+        System.out.println();
         System.out.println(name + ":");
         System.out.println("Discount: " + discount + "%");
         System.out.println(code);
