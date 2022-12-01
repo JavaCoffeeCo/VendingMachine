@@ -46,9 +46,10 @@ public class PaymentController{
       Cash insertedCash = new Cash(billAmount, coinAmount);
       if(payWithCash(insertedCash, amountDue) == true){
         System.out.print("Transaction Successful\n");
+        System.out.println("Please pick up your drink below!\n");
       }
       else{
-        System.out.print("Transaction Failed\n");
+        System.out.println("Transaction Failed\n");
       }
     }
     //if option chosen is credit then prompt details, create creditcard object, call paywithcredit method
@@ -70,7 +71,7 @@ public class PaymentController{
           System.out.println("Please pick up your drink below!\n");
         }
         else{
-          System.out.print("Transaction Failed\n");
+          System.out.println("Transaction Failed\n");
         }
       }
       else{
@@ -87,9 +88,10 @@ public class PaymentController{
       CometCard insertedCard = new CometCard(n, si);
       if(payWithCometCard(insertedCard, amountDue) == true){
         System.out.print("Transaction Successful\n");
+        System.out.println("Please pick up your drink below!\n");
       }
       else{
-        System.out.print("Transaction Failed\n");
+        System.out.println("Transaction Failed\n");
       }
     }
     //if option chosen is out of bounds print invalid option
