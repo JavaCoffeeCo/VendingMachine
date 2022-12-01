@@ -205,6 +205,7 @@ public class VendingMachineController {
                         }
                     // else display menu for user to order
                     } else {
+			 gui.orderDrinkGUI();
                         orderManager.menuPrompt(scnr);
 						paymentController.prompt(scnr, 5.00f);
                     }
