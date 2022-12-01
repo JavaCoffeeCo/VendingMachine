@@ -214,6 +214,7 @@ public class VendingMachineController {
                         orderManager.menuPrompt(scnr);
 			 System.out.println("\nDrink price is: $5.00\nSelect payment type:");
 						paymentController.prompt(scnr, 5.00f);
+			  System.out.println();
                     }
 					
 						// pay for order (call payment controller)
